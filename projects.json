@@ -1,0 +1,105 @@
+{
+  "portfolio": {
+    "name": "AI Projects Portfolio",
+    "owner": "Johnk0008",
+    "description": "Collection of AI, ML, Data Science, and Generative AI projects",
+    "github_url": "https://github.com/Johnk0008/ai-projects-portfolio",
+    "last_updated": "2024-01-15",
+    "total_projects": 1,
+    "status": "active"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "name": "AI Q&A Bot",
+      "folder": "01-ai-qa-bot",
+      "status": "completed",
+      "category": "Generative AI",
+      "technologies": ["Python", "OpenAI GPT", "Streamlit", "REST APIs"],
+      "description": "AI-powered question-answering application with CLI and web interfaces",
+      "features": [
+        "Dual interface (CLI + Web)",
+        "Conversation memory",
+        "Export capabilities",
+        "Statistics tracking",
+        "Real-time chat"
+      ],
+      "demo_url": "",
+      "repository_url": "https://github.com/Johnk0008/ai-projects-portfolio/tree/main/01-ai-qa-bot",
+      "date_started": "2024-01-10",
+      "date_completed": "2024-01-15",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "OpenAI API integration",
+        "Streamlit web development",
+        "CLI application design",
+        "Python package management"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ML Sentiment Analysis",
+      "folder": "02-sentiment-analysis",
+      "status": "planned",
+      "category": "Machine Learning",
+      "technologies": ["Python", "Scikit-learn", "Pandas", "NLTK"],
+      "description": "Machine learning model to analyze sentiment in text data",
+      "features": [
+        "Text preprocessing",
+        "Model training",
+        "Accuracy metrics",
+        "Real-time prediction"
+      ],
+      "date_planned": "2024-02-01",
+      "difficulty": "intermediate",
+      "prerequisites": ["Python", "Basic ML concepts"]
+    },
+    {
+      "id": 3,
+      "name": "AI Image Generator",
+      "folder": "03-ai-image-generator",
+      "status": "planned",
+      "category": "Generative AI",
+      "technologies": ["Python", "Stable Diffusion", "Hugging Face", "Streamlit"],
+      "description": "Generate images from text prompts using AI models",
+      "features": [
+        "Text-to-image generation",
+        "Multiple style options",
+        "Image download",
+        "Prompt suggestions"
+      ],
+      "date_planned": "2024-03-01",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 4,
+      "name": "Stock Price Predictor",
+      "folder": "04-stock-predictor",
+      "status": "planned",
+      "category": "Data Science",
+      "technologies": ["Python", "TensorFlow", "Pandas", "Matplotlib"],
+      "description": "Predict stock prices using LSTM neural networks",
+      "features": [
+        "Data collection",
+        "LSTM model",
+        "Price visualization",
+        "Prediction accuracy"
+      ],
+      "date_planned": "2024-04-01",
+      "difficulty": "advanced"
+    }
+  ],
+  "skills": {
+    "programming_languages": ["Python"],
+    "ai_ml_frameworks": ["OpenAI API"],
+    "web_frameworks": ["Streamlit"],
+    "data_science": ["Pandas", "NumPy"],
+    "tools": ["Git", "VS Code", "Jupyter Notebook"]
+  },
+  "roadmap": {
+    "q1_2024": ["AI Q&A Bot", "ML Sentiment Analysis"],
+    "q2_2024": ["AI Image Generator", "Stock Price Predictor"],
+    "q3_2024": ["Advanced Chatbot", "Computer Vision Project"],
+    "q4_2024": ["LLM Fine-tuning", "Deployment Projects"]
+  }
+}

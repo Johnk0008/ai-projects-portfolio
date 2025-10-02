@@ -97,46 +97,16 @@ While this is primarily a personal portfolio, I'm open to:
 ⭐ Star this repo if you find it interesting or helpful!
 
 
+## 📊 Project Tracking
 
-## Step 7: Create Projects Metadata File
+All projects are tracked in [projects.json](projects.json) with detailed metadata including:
+- Project status and progress
+- Technologies used
+- Learning outcomes
+- Planned features
+- Development roadmap
 
-Create `projects.json` to track all your projects:
-
-```json
-{
-  "portfolio": {
-    "name": "AI Projects Portfolio",
-    "owner": "Johnk0008",
-    "description": "Collection of AI, ML, Data Science, and Generative AI projects",
-    "last_updated": "2024-01-15"
-  },
-  "projects": [
-    {
-      "id": 1,
-      "name": "AI Q&A Bot",
-      "folder": "01-ai-qa-bot",
-      "status": "completed",
-      "technologies": ["Python", "OpenAI GPT", "Streamlit", "REST APIs"],
-      "description": "AI-powered question-answering application with CLI and web interfaces",
-      "demo_url": "",
-      "repository_url": "https://github.com/Johnk0008/ai-projects-portfolio/tree/main/01-ai-qa-bot",
-      "features": [
-        "Dual interface (CLI + Web)",
-        "Conversation memory",
-        "Export capabilities",
-        "Statistics tracking"
-      ],
-      "date_completed": "2024-01-15"
-    },
-    {
-      "id": 2,
-      "name": "Next AI Project",
-      "folder": "02-project-name",
-      "status": "planned",
-      "technologies": ["Python", "Machine Learning"],
-      "description": "Description of next project",
-      "features": [],
-      "date_planned": "2024-02-01"
-    }
-  ]
-}
+### Quick Stats
+- **Total Projects:** 1 Completed, 3 Planned
+- **Categories:** Generative AI, Machine Learning, Data Science
+- **Main Technologies:** Python, OpenAI, Streamlit
