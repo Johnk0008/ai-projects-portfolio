@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Language Translation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 AI Translation Tool</h1>
+            <p>Translate text between multiple languages instantly</p>
+        </div>
+
+        <div class="translation-form">
+            <form id="translationForm" method="POST">
+                <div class="form-group">
+                    <label for="source_text">Text to Translate:</label>
+                    <textarea 
+                        id="source_text" 
+                        name="source_text" 
+                        class="form-control" 
+                        placeholder="Enter text to translate..." 
+                        required>{{ source_text or '' }}</textarea>
+                </div>
+
+                <div class="language-selectors">
+                    <div class="form-group">
+                        <label for="source_lang">From Language:</label>
+                        <select id="source_lang" name="source_lang" class="form-control">
+                            {% for code, name in languages.items() %}
+                                <option value="{{ code }}" {% if code == source_lang %}selected{% endif %}>
+                                    {{ name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="button" class="swap-btn" onclick="swapLanguages()">⇄</button>
+
+                    <div class="form-group">
+                        <label for="target_lang">To Language:</label>
+                        <select id="target_lang" name="target_lang" class="form-control">
+                            {% for code, name in languages.items() %}
+                                <option value="{{ code }}" {% if code == target_lang %}selected{% endif %}>
+                                    {{ name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" onclick="showLoading()">
+                    Translate Text
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Translating...</p>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            {% if translated_text %}
+            <div class="result-container">
+                <div class="result-header">
+                    <h3>Translated Text:</h3>
+                    <div class="action-buttons">
+                        <button type="button" class="action-btn" onclick="copyToClipboard()">
+                            📋 Copy
+                        </button>
+                        <button type="button" class="action-btn" onclick="textToSpeech('{{ target_lang }}')">
+                            🔊 Speak
+                        </button>
+                    </div>
+                </div>
+                <div class="translated-text" id="translatedText">{{ translated_text }}</div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <p>Powered by Google Translate API | AI/ML Translation Tool</p>
+        </div>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function swapLanguages() {
+            const sourceLang = document.getElementById('source_lang');
+            const targetLang = document.getElementById('target_lang');
+            
+            const tempValue = sourceLang.value;
+            sourceLang.value = targetLang.value;
+            targetLang.value = tempValue;
+        }
+
+        function copyToClipboard() {
+            const translatedText = document.getElementById('translatedText').textContent;
+            navigator.clipboard.writeText(translatedText).then(function() {
+                alert('Text copied to clipboard!');
+            }).catch(function(err) {
+                alert('Failed to copy text: ' + err);
+            });
+        }
+
+        function textToSpeech(lang) {
+            const translatedText = document.getElementById('translatedText').textContent;
+            
+            fetch('/text-to-speech', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    text: translatedText,
+                    lang: lang
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    alert('Text-to-speech failed: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
+        }
+
+        // Auto-detect language feature
+        document.getElementById('source_text').addEventListener('blur', function() {
+            const text = this.value.trim();
+            if (text && document.getElementById('source_lang').value === 'auto') {
+                // Simple auto-detection could be implemented here
+                console.log('Auto-detection triggered for:', text);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -9,86 +9,111 @@
     "status": "active"
   },
   "projects": [
-    {
-      "id": 1,
-      "name": "AI Q&A Bot",
-      "folder": "01-ai-qa-bot",
-      "status": "completed",
-      "category": "Generative AI",
-      "technologies": ["Python", "OpenAI GPT", "Streamlit", "REST APIs"],
-      "description": "AI-powered question-answering application with CLI and web interfaces",
-      "features": [
-        "Dual interface (CLI + Web)",
-        "Conversation memory",
-        "Export capabilities",
-        "Statistics tracking",
-        "Real-time chat"
-      ],
-      "demo_url": "",
-      "repository_url": "https://github.com/Johnk0008/ai-projects-portfolio/tree/main/01-ai-qa-bot",
-      "date_started": "2024-01-10",
-      "date_completed": "2024-01-15",
-      "difficulty": "beginner",
-      "learning_outcomes": [
-        "OpenAI API integration",
-        "Streamlit web development",
-        "CLI application design",
-        "Python package management"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "ML Sentiment Analysis",
-      "folder": "02-sentiment-analysis",
-      "status": "planned",
-      "category": "Machine Learning",
-      "technologies": ["Python", "Scikit-learn", "Pandas", "NLTK"],
-      "description": "Machine learning model to analyze sentiment in text data",
-      "features": [
-        "Text preprocessing",
-        "Model training",
-        "Accuracy metrics",
-        "Real-time prediction"
-      ],
-      "date_planned": "2024-02-01",
-      "difficulty": "intermediate",
-      "prerequisites": ["Python", "Basic ML concepts"]
-    },
-    {
-      "id": 3,
-      "name": "AI Image Generator",
-      "folder": "03-ai-image-generator",
-      "status": "planned",
-      "category": "Generative AI",
-      "technologies": ["Python", "Stable Diffusion", "Hugging Face", "Streamlit"],
-      "description": "Generate images from text prompts using AI models",
-      "features": [
-        "Text-to-image generation",
-        "Multiple style options",
-        "Image download",
-        "Prompt suggestions"
-      ],
-      "date_planned": "2024-03-01",
-      "difficulty": "intermediate"
-    },
-    {
-      "id": 4,
-      "name": "Stock Price Predictor",
-      "folder": "04-stock-predictor",
-      "status": "planned",
-      "category": "Data Science",
-      "technologies": ["Python", "TensorFlow", "Pandas", "Matplotlib"],
-      "description": "Predict stock prices using LSTM neural networks",
-      "features": [
-        "Data collection",
-        "LSTM model",
-        "Price visualization",
-        "Prediction accuracy"
-      ],
-      "date_planned": "2024-04-01",
-      "difficulty": "advanced"
-    }
-  ],
+  {
+    "id": "01-ai-qa-bot",
+    "name": "AI Q&A Bot",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "A versatile AI-powered question-answering application with both command-line and web interfaces.",
+    "category": "Generative AI"
+  },
+  {
+    "id": "02-rbi_chatbot",
+    "name": "RBI Chatbot",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "AI chatbot trained on RBI-related documents for financial and policy Q&A.",
+    "category": "Finance AI"
+  },
+  {
+    "id": "03-court_data_fetcher_&_judgement_downloader",
+    "name": "Court Data Fetcher & Judgement Downloader",
+    "status": "Completed",
+    "technologies": ["Python", "Requests", "BeautifulSoup", "Streamlit"],
+    "description": "Automated system to fetch court case data and download judgments efficiently.",
+    "category": "Legal Tech"
+  },
+  {
+    "id": "04-flashcard_app",
+    "name": "Flashcard App",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "AI-assisted flashcard generator for smarter learning and memorization.",
+    "category": "EdTech"
+  },
+  {
+    "id": "05-quote_generator",
+    "name": "Quote Generator",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "Generates motivational quotes dynamically using AI prompts.",
+    "category": "Content Generation"
+  },
+  {
+    "id": "06-translation-tool",
+    "name": "Translation Tool",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "Multilingual translation tool powered by AI models.",
+    "category": "Language AI"
+  },
+  {
+    "id": "07-faq-chatbot",
+    "name": "FAQ Chatbot",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "AI chatbot for answering frequently asked questions using custom datasets.",
+    "category": "Customer Support"
+  },
+  {
+    "id": "08-2D_drafting_floor_plan",
+    "name": "2D Drafting Floor Plan",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "AI tool for generating and refining simple 2D architectural floor plans.",
+    "category": "Architecture AI"
+  },
+  {
+    "id": "09-mechanical_drawing",
+    "name": "Mechanical Drawing",
+    "status": "Completed",
+    "technologies": ["Python", "OpenAI GPT", "Streamlit"],
+    "description": "AI assistant for mechanical part drawing and drafting suggestions.",
+    "category": "Engineering AI"
+  },
+  {
+    "id": "10-url-shortener",
+    "name": "URL Shortener",
+    "status": "Completed",
+    "technologies": ["Python", "Flask", "SQLite"],
+    "description": "A simple and efficient URL shortening web app.",
+    "category": "Web Utility"
+  },
+  {
+    "id": "11-event-registration-system",
+    "name": "Event Registration System",
+    "status": "Completed",
+    "technologies": ["Python", "Flask", "Streamlit", "SQLite"],
+    "description": "Smart event registration system integrated with AI features.",
+    "category": "Web App"
+  },
+  {
+    "id": "12-dna_sequence_analysis",
+    "name": "DNA Sequence Analysis",
+    "status": "Completed",
+    "technologies": ["Python", "BioPython", "Machine Learning"],
+    "description": "Tool for analyzing DNA and protein sequences using AI and ML models.",
+    "category": "Bioinformatics"
+  },
+  {
+    "id": "13-bioinformatics-ml-project",
+    "name": "Bioinformatics ML Project",
+    "status": "Completed",
+    "technologies": ["Python", "Machine Learning", "Pandas", "NumPy"],
+    "description": "Machine learning-based bioinformatics analysis project for pattern discovery.",
+    "category": "Bioinformatics"
+  }
+],
   "skills": {
     "programming_languages": ["Python"],
     "ai_ml_frameworks": ["OpenAI API"],
@@ -96,10 +121,4 @@
     "data_science": ["Pandas", "NumPy"],
     "tools": ["Git", "VS Code", "Jupyter Notebook"]
   },
-  "roadmap": {
-    "q1_2024": ["AI Q&A Bot", "ML Sentiment Analysis"],
-    "q2_2024": ["AI Image Generator", "Stock Price Predictor"],
-    "q3_2024": ["Advanced Chatbot", "Computer Vision Project"],
-    "q4_2024": ["LLM Fine-tuning", "Deployment Projects"]
-  }
 }

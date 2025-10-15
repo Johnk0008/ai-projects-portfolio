@@ -1,0 +1,9 @@
+#!/bin/sh
+'''exec' "/Users/arjan/Downloads/John_Projects/Artificial Intelligence Task List/TASK 2 - Chatbot for FAQs/faq-chatbot/venv/bin/python3.9" "$0" "$@"
+' '''
+import sys
+from weasel.cli import app
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(app())

@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Shorten Your URLs - URL Shortener{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-compress-alt"></i> Shorten Your URL</h4>
+            </div>
+            <div class="card-body">
+                <form id="shortenForm">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-3">
+                        <label for="long_url" class="form-label">Long URL *</label>
+                        {{ form.long_url(class="form-control", placeholder="https://example.com/very/long/url") }}
+                        {% if form.long_url.errors %}
+                            <div class="text-danger">
+                                {% for error in form.long_url.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="custom_alias" class="form-label">Custom Alias</label>
+                                {{ form.custom_alias(class="form-control", placeholder="my-custom-link") }}
+                                <small class="form-text text-muted">Optional custom short code (3-20 characters)</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="expires_in_days" class="form-label">Expiration</label>
+                                {{ form.expires_in_days(class="form-control") }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        {{ form.title(class="form-control", placeholder="Optional title for your URL") }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        {{ form.description(class="form-control", rows="2", placeholder="Optional description") }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100" id="shortenBtn">
+                        <i class="fas fa-rocket"></i> Shorten URL
+                    </button>
+                </form>
+
+                <div id="result" class="mt-4" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                    <h5>Analytics</h5>
+                    <p class="text-muted">Track clicks, referrers, and geographic data for your shortened URLs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-qrcode fa-3x text-primary mb-3"></i>
+                    <h5>QR Codes</h5>
+                    <p class="text-muted">Generate QR codes for your shortened URLs for easy sharing.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                    <h5>Customization</h5>
+                    <p class="text-muted">Custom aliases, expiration dates, and detailed URL management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('shortenForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const shortenBtn = document.getElementById('shortenBtn');
+    const resultDiv = document.getElementById('result');
+    const originalText = shortenBtn.innerHTML;
+    
+    shortenBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Shortening...';
+    shortenBtn.disabled = true;
+    
+    try {
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        
+        const response = await fetch('/shorten', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            if (result.existing) {
+                showResult(`
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-info-circle"></i> URL Already Shortened</h5>
+                        <p>This URL was already shortened previously.</p>
+                    </div>
+                    ${renderUrlCard(result)}
+                `, 'success');
+            } else {
+                showResult(`
+                    <div class="alert alert-success">
+                        <h5><i class="fas fa-check-circle"></i> URL Shortened Successfully!</h5>
+                        <p>Your URL has been shortened and is ready to share.</p>
+                    </div>
+                    ${renderUrlCard(result)}
+                `, 'success');
+            }
+        } else {
+            showResult(`
+                <div class="alert alert-danger">
+                    <h5><i class="fas fa-exclamation-triangle"></i> Error</h5>
+                    <p>${result.error}</p>
+                </div>
+            `, 'error');
+        }
+    } catch (error) {
+        showResult(`
+            <div class="alert alert-danger">
+                <h5><i class="fas fa-exclamation-triangle"></i> Network Error</h5>
+                <p>${error.message}</p>
+            </div>
+        `, 'error');
+    } finally {
+        shortenBtn.innerHTML = originalText;
+        shortenBtn.disabled = false;
+    }
+});
+
+function renderUrlCard(data) {
+    const shortUrl = `${window.location.origin}/r/${data.short_code}`;
+    return `
+        <div class="card border-success">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6 class="card-title">${data.title || 'Untitled URL'}</h6>
+                        <p class="text-muted small mb-1">Original URL:</p>
+                        <p class="mb-2" style="word-break: break-all;">${data.long_url}</p>
+                        
+                        <p class="text-muted small mb-1">Short URL:</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" value="${shortUrl}" id="shortUrlInput" readonly>
+                            <button class="btn btn-outline-success" type="button" onclick="copyToClipboard('${shortUrl}')">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="${shortUrl}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-external-link-alt"></i> Test URL
+                            </a>
+                            <a href="/analytics/${data.short_code}" class="btn btn-sm btn-outline-info">
+                                <i class="fas fa-chart-bar"></i> View Analytics
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(shortUrl)}" 
+                             alt="QR Code" class="img-fluid mb-2">
+                        <small class="text-muted">Scan to share</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function showResult(html, type) {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = 'block';
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show temporary success message
+        const btn = event.target;
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.classList.remove('btn-outline-success');
+        btn.classList.add('btn-success');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHtml;
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-outline-success');
+        }, 2000);
+    });
+}
+</script>
+{% endblock %}

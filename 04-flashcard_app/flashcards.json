@@ -1,0 +1,13 @@
+{
+    "flashcards": [
+        {
+            "question": "What does api stands for?",
+            "answer": "Application Progrmming Interface"
+        },
+        {
+            "question": "What is opp?",
+            "answer": "Object-Oriented Programming"
+        }
+    ],
+    "current_index": 0
+}

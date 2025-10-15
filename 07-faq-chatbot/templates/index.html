@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI FAQ Chatbot - NLP Powered Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI FAQ Chatbot</h1>
+            <p>Powered by NLP & Machine Learning - Get instant answers to your questions</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>💬 Chat with FAQ Assistant</h2>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be inserted here by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your question here..." autocomplete="off">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>📚 FAQ Categories</h3>
+            <div class="faq-categories">
+                <button class="category-btn" onclick="chatbot.loadCategoryFAQs('shipping_returns')">
+                    🚚 Shipping & Returns
+                </button>
+                <button class="category-btn" onclick="chatbot.loadCategoryFAQs('payments')">
+                    💳 Payments
+                </button>
+                <button class="category-btn" onclick="chatbot.loadCategoryFAQs('orders')">
+                    📦 Orders
+                </button>
+                <button class="category-btn" onclick="chatbot.loadCategoryFAQs('account')">
+                    👤 Account
+                </button>
+                <button class="category-btn" onclick="chatbot.loadCategoryFAQs('support')">
+                    🎧 Support
+                </button>
+            </div>
+
+            <h3 style="margin-top: 25px;">💡 Suggested Questions</h3>
+            <div class="suggested-questions" id="suggestedQuestions">
+                <!-- Suggested questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built with Flask, NLTK, spaCy & Scikit-learn | AI/ML FAQ Chatbot System</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        let chatbot;
+        document.addEventListener('DOMContentLoaded', () => {
+            chatbot = new Chatbot();
+        });
+    </script>
+</body>
+</html>

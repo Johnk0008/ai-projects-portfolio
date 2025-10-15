@@ -1,0 +1,94 @@
+{
+    "faqs": [
+        {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day return policy for all unused items in original packaging. Returns are free for customers within the US.",
+            "category": "shipping_returns",
+            "tags": ["return", "refund", "policy"]
+        },
+        {
+            "question": "How long does shipping take?",
+            "answer": "Standard shipping takes 3-5 business days. Express shipping is 1-2 business days. International shipping takes 7-14 business days.",
+            "category": "shipping_returns",
+            "tags": ["shipping", "delivery", "time"]
+        },
+        {
+            "question": "Do you offer international shipping?",
+            "answer": "Yes, we ship to over 50 countries worldwide. International shipping costs and delivery times vary by location.",
+            "category": "shipping_returns",
+            "tags": ["international", "shipping", "global"]
+        },
+        {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay.",
+            "category": "payments",
+            "tags": ["payment", "credit card", "paypal"]
+        },
+        {
+            "question": "Is my payment information secure?",
+            "answer": "Yes, we use SSL encryption and PCI-compliant payment processors to ensure your payment information is completely secure.",
+            "category": "payments",
+            "tags": ["security", "payment", "safe"]
+        },
+        {
+            "question": "How can I track my order?",
+            "answer": "You can track your order using the tracking link sent to your email, or by logging into your account and viewing order history.",
+            "category": "orders",
+            "tags": ["track", "order", "status"]
+        },
+        {
+            "question": "Can I cancel my order?",
+            "answer": "Orders can be cancelled within 1 hour of placement. After that, you'll need to wait for delivery and use our return policy.",
+            "category": "orders",
+            "tags": ["cancel", "order", "change"]
+        },
+        {
+            "question": "Do you have a mobile app?",
+            "answer": "Yes, we have iOS and Android apps available for download in the App Store and Google Play Store.",
+            "category": "general",
+            "tags": ["app", "mobile", "download"]
+        },
+        {
+            "question": "How do I create an account?",
+            "answer": "Click on 'Sign Up' in the top right corner, enter your email and password, and verify your email address to create an account.",
+            "category": "account",
+            "tags": ["account", "signup", "register"]
+        },
+        {
+            "question": "I forgot my password, what should I do?",
+            "answer": "Click on 'Forgot Password' on the login page, enter your email, and we'll send you a password reset link.",
+            "category": "account",
+            "tags": ["password", "login", "reset"]
+        },
+        {
+            "question": "What is your customer service phone number?",
+            "answer": "Our customer service team can be reached at 1-800-123-4567, available Monday-Friday 9AM-6PM EST.",
+            "category": "support",
+            "tags": ["contact", "phone", "support"]
+        },
+        {
+            "question": "Do you offer student discounts?",
+            "answer": "Yes, we offer 15% student discount with valid student ID verification through our student discount program.",
+            "category": "discounts",
+            "tags": ["student", "discount", "promo"]
+        },
+        {
+            "question": "What are your business hours?",
+            "answer": "Our customer support is available Monday through Friday, 9:00 AM to 6:00 PM EST. Online orders can be placed 24/7.",
+            "category": "support",
+            "tags": ["hours", "time", "support"]
+        },
+        {
+            "question": "Do you price match?",
+            "answer": "Yes, we offer price matching within 7 days of purchase. Contact customer service with the competitor's current price.",
+            "category": "pricing",
+            "tags": ["price", "match", "competitor"]
+        },
+        {
+            "question": "Are your products eco-friendly?",
+            "answer": "We're committed to sustainability. All our products are made from recycled materials and are 100% recyclable.",
+            "category": "products",
+            "tags": ["eco", "environment", "sustainable"]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+
+FLANGE BEARING HOUSING - TECHNICAL SPECIFICATION
+
+PART NUMBER: FBH-2024-001
+DESCRIPTION: Flange Mounted Bearing Housing
+MATERIAL: Cast Iron Grade 25
+
+DIMENSIONS:
+- Overall Flange Diameter: 120 mm
+- Flange Thickness: 15 mm
+- Bearing Bore Diameter: 40 mm
+- Housing Outer Diameter: 60 mm
+- Bolt Circle Diameter: 100 mm
+- Number of Bolt Holes: 6
+- Bolt Hole Diameter: 10 mm
+- Overall Height: 50 mm
+
+MATERIAL PROPERTIES:
+- Tensile Strength: 250 MPa
+- Hardness: 180-220 HB
+- Density: 7.2 g/cm³
+
+MANUFACTURING REQUIREMENTS:
+1. All dimensions according to ISO 2768-m
+2. Machining tolerance: ±0.1 mm
+3. Surface roughness: 3.2 μm Ra
+4. Deburr all sharp edges
+5. Stress relief annealing required
+6. Pressure test: 5 bar for 10 minutes
+
+APPLICATION:
+- Industrial machinery
+- Power transmission systems
+- Medium duty bearing support
+
+NOTES:
+- Use suitable sealing arrangement
+- Lubrication fitting M8x1.25 required
+- Mounting surface to be machined flat within 0.05 mm

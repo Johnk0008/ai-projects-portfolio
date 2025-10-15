@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": ["./utils"],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
+}
