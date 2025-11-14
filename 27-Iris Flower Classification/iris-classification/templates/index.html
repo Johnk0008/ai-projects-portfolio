@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .probabilities {
+            margin-top: 10px;
+        }
+        .prob-bar {
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        .prob-fill {
+            background-color: #3498db;
+            height: 20px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌺 Iris Flower Classification</h1>
+        <p>Enter the measurements of an Iris flower to predict its species:</p>
+        
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length (cm):</label>
+                <input type="number" id="sepal_length" name="sepal_length" step="0.1" min="4.0" max="8.0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width (cm):</label>
+                <input type="number" id="sepal_width" name="sepal_width" step="0.1" min="2.0" max="4.5" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="petal_length">Petal Length (cm):</label>
+                <input type="number" id="petal_length" name="petal_length" step="0.1" min="1.0" max="7.0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="petal_width">Petal Width (cm):</label>
+                <input type="number" id="petal_width" name="petal_width" step="0.1" min="0.1" max="2.5" required>
+            </div>
+            
+            <button type="submit">Predict Species</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                document.getElementById('modelName').textContent = data.model_name;
+                if (data.error) {
+                    resultDiv.innerHTML = `<div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px;">
+                        Error: ${data.error}
+                    </div>`;
+                    resultDiv.style.display = 'block';
+                    return;
+                }
+                
+                let html = `<div class="success">
+                    <h3>Prediction Result</h3>
+                    <p><strong>Predicted Species:</strong> ${data.prediction}</p>
+                    <p><strong>Model Accuracy:</strong> ${data.accuracy}</p>
+                    <p><strong>Model Used:</strong> <span id="modelName"></span></p>
+                    <div class="probabilities">
+                        <h4>Probabilities:</h4>`;
+                
+                for (const [species, prob] of Object.entries(data.probabilities)) {
+                    const width = (parseFloat(prob) * 100).toFixed(1);
+                    html += `
+                        <div>
+                            <strong>${species}:</strong> ${prob}
+                            <div class="prob-bar">
+                                <div class="prob-fill" style="width: ${width}%">${width}%</div>
+                            </div>
+                        </div>`;
+                }
+                
+                html += `</div></div>`;
+                resultDiv.innerHTML = html;
+                resultDiv.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `<div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px;">
+                    An error occurred while making the prediction.
+                </div>`;
+                resultDiv.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

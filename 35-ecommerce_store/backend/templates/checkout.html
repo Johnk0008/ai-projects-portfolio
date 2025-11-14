@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h2>Checkout</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="shipping_address" class="form-label">Shipping Address</label>
+                <textarea name="shipping_address" id="shipping_address" class="form-control" rows="4" required></textarea>
+            </div>
+            
+            <h4>Order Summary</h4>
+            <ul class="list-group mb-3">
+                {% for item in cart.items.all %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>{{ item.product.name }} (x{{ item.quantity }})</span>
+                    <span>${{ item.total_price }}</span>
+                </li>
+                {% endfor %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong>Total</strong>
+                    <strong>${{ cart.total_price }}</strong>
+                </li>
+            </ul>
+            
+            <button type="submit" class="btn btn-success btn-lg">Place Order</button>
+            <a href="{% url 'cart' %}" class="btn btn-secondary">Back to Cart</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

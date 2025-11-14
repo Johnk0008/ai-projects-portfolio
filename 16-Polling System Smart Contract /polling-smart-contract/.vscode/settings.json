@@ -1,0 +1,16 @@
+{
+    "python.pythonPath": "polling_env/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": ["./polling_env/lib/python3.9/site-packages"],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "polling_env": true
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.associations": {
+        "*.sol": "solidity"
+    },
+    "solidity.enabled": true
+}

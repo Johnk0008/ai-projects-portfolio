@@ -1,60 +1,226 @@
 # 🚀 My AI Projects Portfolio
 
-Welcome to my AI Projects Portfolio! This repository contains a collection of my projects in Artificial Intelligence, Machine Learning, Data Science, and Generative AI.
+Welcome to my AI Projects Portfolio! This repository contains a collection of my projects in Artificial Intelligence, Machine Learning, Data Science, Generative AI, Software Development, Cybersecurity, Web Development, 3D Modeling, Dashboards, and more.
+
+---
 
 ## 📁 Projects Overview
 
-### [01. AI Q&A Bot](/01-ai-qa-bot/)
+### **01. AI Q&A Bot**
 
 A versatile AI-powered question-answering application with both command-line and web interfaces.
 
-### [02. RBI Chatbot](/02-rbi_chatbot/)
+### **02. RBI Chatbot**
 
 AI chatbot trained on RBI-related documents for financial and policy Q&A.
 
-### [03. Court Data Fetcher & Judgement Downloader](/03-court_data_fetcher_&_judgement_downloader/)
+### **03. Court Data Fetcher & Judgement Downloader**
 
 Automated system to fetch court case data and download judgments efficiently.
 
-### [04. Flashcard App](/04-flashcard_app/)
+### **04. Flashcard App**
 
 AI-assisted flashcard generator for smarter learning and memorization.
 
-### [05. Quote Generator](/05-quote_generator/)
+### **05. Quote Generator**
 
 Generates motivational quotes dynamically using AI prompts.
 
-### [06. Translation Tool](/06-translation-tool/)
+### **06. Translation Tool**
 
 Multilingual translation tool powered by AI models.
 
-### [07. FAQ Chatbot](/07-faq-chatbot/)
+### **07. FAQ Chatbot**
 
 AI chatbot for answering frequently asked questions using custom datasets.
 
-### [08. 2D Drafting Floor Plan](/08-2D_drafting_floor_plan/)
+### **08. 2D Drafting Floor Plan**
 
 AI tool for generating and refining simple 2D architectural floor plans.
 
-### [09. Mechanical Drawing](/09-mechanical_drawing/)
+### **09. Mechanical Drawing**
 
 AI assistant for mechanical part drawing and drafting suggestions.
 
-### [10. URL Shortener](/10-url-shortener/)
+### **10. URL Shortener**
 
 A simple and efficient URL shortening web app.
 
-### [11. Event Registration System](/11-event-registration-system/)
+### **11. Event Registration System**
 
 Smart event registration system integrated with AI features.
 
-### [12. DNA Sequence Analysis](/12-dna_sequence_analysis/)
+### **12. DNA Sequence Analysis**
 
 Tool for analyzing DNA and protein sequences using AI and ML models.
 
-### [13. Bioinformatics ML Project](/13-bioinformatics-ml-project/)
+### **13. Bioinformatics ML Project**
 
 Machine learning-based bioinformatics analysis project for pattern discovery.
+
+---
+
+# 📦 **Newly Added Projects (14–53)**
+
+### **14. Genetic Engineering Project**
+
+A conceptual/simulated project exploring computational genetic engineering workflows.
+
+### **15. Simple Storage Smart Contract**
+
+A basic Solidity smart contract demonstrating storage operations.
+
+### **16. Polling System Smart Contract**
+
+A blockchain-based decentralized polling/voting smart contract.
+
+### **17. Basic Calculator Program**
+
+A simple arithmetic calculator program.
+
+### **18. Banking System (Mini Project)**
+
+A mini banking system offering account operations.
+
+### **19. CGPA Calculator**
+
+A tool to calculate CGPA using subject grades and credit scores.
+
+### **20. Login & Registration System**
+
+A secure authentication module with user registration and login.
+
+### **21. Detecting Data Leaks Using SQL Injection**
+
+A security project demonstrating SQL injection vulnerabilities and prevention.
+
+### **22. Cloud-Based Bus Pass System**
+
+A cloud app for bus pass application, renewal, and management.
+
+### **23. Network Sniffer**
+
+Packet capturing and network traffic analysis tool.
+
+### **24. Phishing Awareness Training**
+
+Cybersecurity project teaching phishing patterns and defense strategies.
+
+### **25. Web Scraping Project**
+
+Automated scripts for scraping structured web data.
+
+### **26. Data Visualization Project**
+
+Visual data analytics using Python visualization libraries.
+
+### **27. Iris Flower Classification**
+
+A supervised ML classification model using the Iris dataset.
+
+### **28. Unemployment Analysis with Python**
+
+Data analysis and visualization of unemployment trends.
+
+### **29. 3D Modeling Visualization**
+
+3D object modeling and visualization (Python/Blender/WebGL).
+
+### **30. Earthquake-Resistant Design**
+
+Civil engineering simulation/concept for earthquake-safe structures.
+
+### **31. ML CI/CD Pipeline**
+
+End-to-end ML automation using CI/CD tools.
+
+### **32. Jenkins Remoting Project**
+
+Automation using Jenkins remoting API.
+
+### **33. Music Player using JavaScript**
+
+Web-based audio player with interactive UI.
+
+### **34. Image Gallery**
+
+Responsive and dynamic image gallery web project.
+
+### **35. E-commerce Store**
+
+A mini online shopping platform.
+
+### **36. Social Media Platform**
+
+Prototype social platform supporting posts, likes, and user profiles.
+
+### **37. Logo Redesign AI**
+
+AI-driven logo redesign and generation system.
+
+### **38. Student Grade Tracker**
+
+Tool to manage, track, and visualize student grades.
+
+### **39. AI Chatbot Project**
+
+Conversational AI chatbot powered by NLP models.
+
+### **40. Credit Scoring Model**
+
+ML model predicting user creditworthiness.
+
+### **41. Disease Prediction System**
+
+AI model predicting diseases using symptom/biometric data.
+
+### **42. 3D CAD Python Project**
+
+CAD modeling automated with Python scripts.
+
+### **43. FEA Project**
+
+Finite Element Analysis simulations.
+
+### **44. Financial Health Dashboard**
+
+Dashboard analyzing financial KPIs.
+
+### **45. HR Analytics Dashboard**
+
+Employee performance and attrition analysis dashboard.
+
+### **46. Hangman Game**
+
+Classic Hangman game built with Python/JavaScript.
+
+### **47. Stock Portfolio Tracker**
+
+Tracks investment portfolio performance and analytics.
+
+### **48. FBI Crime Forecasting**
+
+Predictive analytics on FBI crime datasets.
+
+### **49. Strava Fitness Analysis**
+
+Analysis of Strava activity and fitness datasets.
+
+### **50. Property Price Prediction**
+
+ML model predicting real estate prices.
+
+### **51. Customer Churn Prediction**
+
+Predictive churn analytics model.
+
+### **52. Early Disease Detection**
+
+AI model for early detection of medical conditions.
+
+### **53. Uber Datasets Analysis**
+
+Exploration and visualization of Uber ride datasets.
 
 ---
 
@@ -63,11 +229,15 @@ Machine learning-based bioinformatics analysis project for pattern discovery.
 ### Programming Languages
 
 * Python
+* JavaScript
+* Solidity
+* SQL
 
 ### AI/ML Frameworks
 
 * OpenAI GPT API
 * TensorFlow, PyTorch
+* Scikit-Learn
 
 ### Web Frameworks
 
@@ -75,33 +245,23 @@ Machine learning-based bioinformatics analysis project for pattern discovery.
 
 ### Data Science
 
-* Pandas, NumPy, Matplotlib, Seaborn
+* Pandas, NumPy
+* Matplotlib, Seaborn, Plotly
 
 ### Tools & Platforms
 
 * Git & GitHub
 * VS Code
 * Jupyter Notebooks
+* Jenkins CI/CD
 
 ---
 
 ## 📊 Project Progress
 
-| Project                                                                                     | Status      | Technologies              | Demo           |
-| ------------------------------------------------------------------------------------------- | ----------- | ------------------------- | -------------- |
-| [AI Q&A Bot](/01-ai-qa-bot/)                                                                | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [RBI Chatbot](/02-rbi_chatbot/)                                                             | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Court Data Fetcher & Judgement Downloader](/03-court_data_fetcher_&_judgement_downloader/) | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Flashcard App](/04-flashcard_app/)                                                         | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Quote Generator](/05-quote_generator/)                                                     | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Translation Tool](/06-translation-tool/)                                                   | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [FAQ Chatbot](/07-faq-chatbot/)                                                             | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [2D Drafting Floor Plan](/08-2D_drafting_floor_plan/)                                       | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Mechanical Drawing](/09-mechanical_drawing/)                                               | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [URL Shortener](/10-url-shortener/)                                                         | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Event Registration System](/11-event-registration-system/)                                 | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [DNA Sequence Analysis](/12-dna_sequence_analysis/)                                         | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
-| [Bioinformatics ML Project](/13-bioinformatics-ml-project/)                                 | ✅ Completed | Python, OpenAI, Streamlit | [Live Demo](#) |
+Projects 1–13 are **Completed**, while Projects 14–53 are **Newly Added & Updating Continuously**.
+
+A structured progress table update will follow as these projects evolve.
 
 ---
 
@@ -111,7 +271,7 @@ Machine learning-based bioinformatics analysis project for pattern discovery.
 
 * Python 3.8+
 * Git
-* (Optional) Virtual Environment
+* Virtual Environment (optional)
 
 ### Setup Instructions
 
@@ -126,51 +286,29 @@ Navigate to any project folder:
 cd 01-ai-qa-bot
 ```
 
-Follow individual project README for specific setup instructions.
+Follow individual project READMEs for setup.
 
 ---
 
 ## 📈 Learning Journey
 
-This portfolio documents my growth in AI and machine learning. Each project represents:
+Each project represents:
 
 * New concepts learned
 * Technical challenges overcome
-* Practical applications built
-
----
-
-## 📊 Project Tracking
-
-All projects are tracked in `projects.json` with detailed metadata including:
-
-* Project status and progress
-* Technologies used
-* Learning outcomes
-* Planned features
-* Development roadmap
-
-### Quick Stats
-
-* **Total Projects:** 13 Completed
-* **Categories:** Generative AI, Machine Learning, Data Science
-* **Main Technologies:** Python, OpenAI, Streamlit
+* Practical real-world applications
 
 ---
 
 ## 🤝 Contributing
 
-While this is primarily a personal portfolio, I'm open to:
-
-* Feedback and suggestions
-* Collaboration on interesting projects
-* Learning opportunities
+Open to feedback, suggestions, and collaboration.
 
 ---
 
 ## 📫 Connect With Me
 
-* GitHub: [@Johnk0008](https://github.com/Johnk0008)
-* LinkedIn: [linkedin.com/in/johnk0008](https://www.linkedin.com/in/johnk0008/)
+* GitHub: **@Johnk0008**
+* LinkedIn: **linkedin.com/in/johnk0008**
 
-⭐ Star this repo if you find it interesting or helpful!
+⭐ *Star this repo if you find my work helpful!*

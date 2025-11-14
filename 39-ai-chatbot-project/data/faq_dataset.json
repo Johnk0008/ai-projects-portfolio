@@ -1,0 +1,18 @@
+{
+    "rules": {
+        "greeting": "Hello! How can I help you today?",
+        "goodbye": "Goodbye! Have a wonderful day!",
+        "thanks": "You're welcome!",
+        "hours": "We're open from 9 AM to 6 PM, Monday to Friday.",
+        "location": "We're located at 123 Main Street, City, State.",
+        "contact": "You can contact us at contact@company.com or (555) 123-4567."
+    },
+    "patterns": {
+        "greeting": ["hello", "hi", "hey", "good morning", "good afternoon"],
+        "goodbye": ["bye", "goodbye", "see you", "farewell"],
+        "thanks": ["thank you", "thanks", "appreciate"],
+        "hours": ["hours", "open", "close", "business hours"],
+        "location": ["where", "location", "address", "find you"],
+        "contact": ["contact", "email", "phone", "call", "reach"]
+    }
+}

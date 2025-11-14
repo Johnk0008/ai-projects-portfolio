@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run HR Dashboard",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Run Jupyter Notebook",
+            "type": "python",
+            "request": "launch",
+            "program": "-m",
+            "args": [
+                "notebook",
+                "--ip=localhost",
+                "--port=8888",
+                "--no-browser"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

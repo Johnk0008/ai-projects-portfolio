@@ -1,0 +1,9 @@
+# requirements.txt
+pandas==1.5.3
+numpy==1.23.5
+matplotlib==3.6.2
+seaborn==0.12.1
+plotly==5.11.0
+jupyter==1.0.0
+notebook==6.5.2
+ipykernel==6.19.2

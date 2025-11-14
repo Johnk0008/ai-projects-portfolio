@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="music-player">
+        <div class="player-header">
+            <h1><i class="fas fa-music"></i> AI Music Player</h1>
+        </div>
+
+        <!-- Now Playing Section -->
+        <div class="now-playing">
+            <div class="album-art">
+                <i class="fas fa-compact-disc"></i>
+            </div>
+            <div class="song-info">
+                <h2 id="song-title">Select a song</h2>
+                <p id="song-artist">-</p>
+                <p id="song-duration">-</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <span id="total-time">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="shuffle-btn" class="control-btn">
+                <i class="fas fa-random"></i>
+            </button>
+            <button id="prev-btn" class="control-btn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="play-btn" class="play-pause">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next-btn" class="control-btn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+            <button id="repeat-btn" class="control-btn">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-control">
+            <i class="fas fa-volume-down"></i>
+            <div class="volume-bar" id="volume-bar">
+                <div class="volume-level" id="volume-level"></div>
+            </div>
+            <i class="fas fa-volume-up"></i>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-section">
+            <h3>Playlist</h3>
+            <div class="playlist" id="playlist">
+                <!-- Playlist items will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="audio-player"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

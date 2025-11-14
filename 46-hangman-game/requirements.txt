@@ -1,0 +1,2 @@
+# No external dependencies needed for this basic game
+# This file is for future expansion

@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "finenv/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.autopep8Path": "finenv/bin/autopep8",
+    "python.formatting.provider": "autopep8"
+}

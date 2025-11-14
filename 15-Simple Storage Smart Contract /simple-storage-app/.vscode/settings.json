@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": ["./scripts"],
+    "files.associations": {
+        "*.sol": "solidity"
+    }
+}

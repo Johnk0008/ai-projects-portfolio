@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Stock Tracker",
+            "type": "python",
+            "request": "launch",
+            "program": "stock_tracker.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

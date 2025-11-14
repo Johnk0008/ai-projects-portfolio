@@ -1,0 +1,22 @@
+# Core packages with Python 3.9 compatible versions
+numpy==1.23.5
+pandas==1.5.3
+matplotlib==3.5.3
+seaborn==0.12.2
+scikit-learn==1.2.2
+jupyter==1.0.0
+notebook==6.5.4
+
+# Development tools
+black==22.12.0
+flake8==6.0.0
+pytest==7.2.2
+
+# Biotechnology specific
+biopython==1.81
+plotly==5.13.1
+streamlit==1.22.0
+
+# Additional data science packages
+scipy==1.10.1
+statsmodels==0.14.0

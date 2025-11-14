@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bellabeat Fitness Analytics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .dashboard { max-width: 1200px; margin: 0 auto; }
+        .kpi-container { display: flex; justify-content: space-between; margin: 20px 0; }
+        .kpi-box { background: #f0f8ff; padding: 15px; border-radius: 8px; text-align: center; flex: 1; margin: 0 10px; }
+        .chart-container { margin: 20px 0; }
+        .insights { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>🚴‍♀️ Bellabeat Fitness Analytics Dashboard</h1>
+        
+        <div class="kpi-container">
+            <div class="kpi-box">
+                <h3>Average Daily Steps</h3>
+                <h2 id="avg-steps">8,324</h2>
+            </div>
+            <div class="kpi-box">
+                <h3>Goal Achievement</h3>
+                <h2 id="goal-rate">24.5%</h2>
+            </div>
+            <div class="kpi-box">
+                <h3>Avg Sleep Hours</h3>
+                <h2 id="avg-sleep">6.8 hrs</h2>
+            </div>
+            <div class="kpi-box">
+                <h3>Sleep Efficiency</h3>
+                <h2 id="sleep-eff">84.2%</h2>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div id="weekly-activity" style="width:100%; height:400px;"></div>
+        </div>
+
+        <div class="insights">
+            <h2>📊 Key Insights & Recommendations</h2>
+            <ul>
+                <li>Only 24.5% of users meet the recommended 10,000 daily steps goal</li>
+                <li>Average sleep duration of 6.8 hours is below the 7-9 hour recommendation</li>
+                <li>Tuesday shows the highest activity levels across the week</li>
+                <li>Sleep efficiency of 84.2% indicates room for improvement in sleep quality</li>
+            </ul>
+            
+            <h3>Strategic Recommendations:</h3>
+            <ol>
+                <li>Implement smart notifications for sedentary behavior detection</li>
+                <li>Develop personalized step goals based on user history</li>
+                <li>Add sleep quality scoring and improvement suggestions</li>
+                <li>Create educational content on sleep optimization</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Weekly Activity Chart
+        var weeklyData = [{
+            x: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            y: [7833, 8944, 8029, 7997, 8012, 9027, 7833],
+            type: 'bar',
+            marker: {color: 'skyblue'}
+        }];
+
+        var layout = {
+            title: 'Average Steps by Day of Week',
+            xaxis: {title: 'Day of Week'},
+            yaxis: {title: 'Average Steps'},
+            shapes: [{
+                type: 'line',
+                x0: -0.5,
+                x1: 6.5,
+                y0: 10000,
+                y1: 10000,
+                line: {color: 'red', width: 2, dash: 'dash'}
+            }],
+            annotations: [{
+                x: 3,
+                y: 10500,
+                text: '10,000 Steps Goal',
+                showarrow: false,
+                bgcolor: 'white'
+            }]
+        };
+
+        Plotly.newPlot('weekly-activity', weeklyData, layout);
+    </script>
+</body>
+</html>

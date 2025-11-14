@@ -1,0 +1,35 @@
+{
+    "suspicious_emails": [
+        {
+            "subject": "Urgent: Your Account Will Be Suspended",
+            "sender": "security@paypal-verify.com",
+            "content": "Dear Customer, We have detected suspicious activity on your account. Click here to verify your identity immediately or your account will be suspended.",
+            "red_flags": ["Generic greeting", "Urgent language", "Suspicious sender domain", "Threat of account suspension"]
+        },
+        {
+            "subject": "Password Reset Required",
+            "sender": "noreply@microsoft-support.net",
+            "content": "We noticed someone tried to access your account from a new device. Reset your password now to secure your account.",
+            "red_flags": ["Fake Microsoft domain", "Creates false urgency", "No specific user information"]
+        }
+    ],
+    "fake_websites": [
+        {
+            "url": "http://apple-id-verify.com",
+            "legitimate_url": "https://appleid.apple.com",
+            "differences": ["Uses HTTP instead of HTTPS", "Wrong domain name", "Poor design quality"]
+        }
+    ],
+    "social_engineering_tactics": [
+        {
+            "tactic": "Pretexting",
+            "description": "Creating a fake scenario to obtain information",
+            "example": "Caller claims to be from IT department needing password for 'system updates'"
+        },
+        {
+            "tactic": "Baiting",
+            "description": "Offering something enticing to lure victims",
+            "example": "Free USB drive containing malware left in parking lot"
+        }
+    ]
+}

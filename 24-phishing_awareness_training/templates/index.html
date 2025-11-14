@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center mb-5">
+        <h1 class="display-4 text-primary">
+            <i class="fas fa-shield-alt"></i> Phishing Awareness Training
+        </h1>
+        <p class="lead">Learn to identify and protect against phishing attacks</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Module 1 -->
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-envelope text-danger fa-3x mb-3"></i>
+                <h5 class="card-title">Module 1: Phishing Emails</h5>
+                <p class="card-text">Learn to recognize suspicious emails and common tactics used by attackers.</p>
+                <a href="{{ url_for('show_module', module_id=1) }}" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-globe text-warning fa-3x mb-3"></i>
+                <h5 class="card-title">Module 2: Fake Websites</h5>
+                <p class="card-text">Identify fraudulent websites and understand URL analysis techniques.</p>
+                <a href="{{ url_for('show_module', module_id=2) }}" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-users text-info fa-3x mb-3"></i>
+                <h5 class="card-title">Module 3: Social Engineering</h5>
+                <p class="card-text">Understand psychological manipulation techniques used by attackers.</p>
+                <a href="{{ url_for('show_module', module_id=3) }}" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 4 -->
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
+                <h5 class="card-title">Module 4: Best Practices</h5>
+                <p class="card-text">Learn security best practices and how to protect yourself online.</p>
+                <a href="{{ url_for('show_module', module_id=4) }}" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h3>Ready to Test Your Knowledge?</h3>
+                <p>Take our interactive quiz to see how well you can identify phishing attempts.</p>
+                <a href="{{ url_for('quiz') }}" class="btn btn-success btn-lg">
+                    <i class="fas fa-play-circle"></i> Start Quiz
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

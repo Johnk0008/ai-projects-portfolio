@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "cad_env\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": [
+        "./src"
+    ],
+    "files.associations": {
+        "*.step": "cad",
+        "*.stl": "cad"
+    },
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true
+}

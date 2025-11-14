@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake-Resistant Building Design Analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .visualization {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earthquake-Resistant Building Design Analysis</h1>
+        
+        <div class="input-section">
+            <h2>Building Parameters</h2>
+            <form id="analysisForm">
+                <div class="form-group">
+                    <label for="height">Building Height (m):</label>
+                    <input type="number" id="height" name="height" value="30" step="0.1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="base_width">Base Width (m):</label>
+                    <input type="number" id="base_width" name="base_width" value="20" step="0.1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="seismic_zone">Seismic Zone:</label>
+                    <select id="seismic_zone" name="seismic_zone" required>
+                        <option value="Zone II">Zone II (Low)</option>
+                        <option value="Zone III">Zone III (Moderate)</option>
+                        <option value="Zone IV" selected>Zone IV (High)</option>
+                        <option value="Zone V">Zone V (Very High)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="soil_type">Soil Type:</label>
+                    <select id="soil_type" name="soil_type" required>
+                        <option value="Type I">Type I (Hard Soil)</option>
+                        <option value="Type II" selected>Type II (Medium Soil)</option>
+                        <option value="Type III">Type III (Soft Soil)</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Analyze Building</button>
+            </form>
+        </div>
+
+        <div id="resultsSection" class="results" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div id="resultsContent"></div>
+            <div id="visualizations"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('analysisForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                height: parseFloat(document.getElementById('height').value),
+                base_width: parseFloat(document.getElementById('base_width').value),
+                seismic_zone: document.getElementById('seismic_zone').value,
+                soil_type: document.getElementById('soil_type').value
+            };
+            
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const results = await response.json();
+                displayResults(results);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error analyzing building');
+            }
+        });
+        
+        function displayResults(results) {
+            const resultsContent = document.getElementById('resultsContent');
+            const resultsSection = document.getElementById('resultsSection');
+            
+            resultsContent.innerHTML = `
+                <h3>Structural Analysis</h3>
+                <p><strong>Base Shear:</strong> ${results.base_shear} kN</p>
+                <p><strong>Seismic Coefficient:</strong> ${results.seismic_coefficient}</p>
+                <p><strong>Fundamental Period:</strong> ${results.fundamental_period} sec</p>
+                <p><strong>Lateral Displacement:</strong> ${results.lateral_displacement} mm</p>
+                <p><strong>Drift Ratio:</strong> ${results.drift_ratio} (${results.drift_acceptable ? 'Acceptable' : 'Not Acceptable'})</p>
+                <p><strong>Performance Score:</strong> ${results.performance_score}/100</p>
+                
+                <h3>Recommendations</h3>
+                <ul>
+                    ${results.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            `;
+            
+            resultsSection.style.display = 'block';
+            
+            // Load visualizations
+            loadVisualizations(results);
+        }
+        
+        function loadVisualizations(results) {
+            // This would typically make additional API calls to get visualizations
+            const visualizations = document.getElementById('visualizations');
+            visualizations.innerHTML = `
+                <div class="visualization">
+                    <h3>Performance Analysis</h3>
+                    <div id="performanceChart"></div>
+                </div>
+            `;
+            
+            // Simplified visualization - in real implementation, this would come from backend
+            createSimplifiedChart(results);
+        }
+        
+        function createSimplifiedChart(results) {
+            const data = [{
+                type: 'indicator',
+                mode: 'gauge+number',
+                value: results.performance_score,
+                title: { text: 'Seismic Performance Score' },
+                gauge: {
+                    axis: { range: [0, 100] },
+                    steps: [
+                        { range: [0, 60], color: 'red' },
+                        { range: [60, 80], color: 'yellow' },
+                        { range: [80, 100], color: 'green' }
+                    ]
+                }
+            }];
+            
+            Plotly.newPlot('performanceChart', data);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>Phishing Awareness Quiz</h2>
+        <p class="lead">Test your knowledge about phishing attacks and security best practices.</p>
+        
+        <div id="quiz-container">
+            <form id="quiz-form">
+                {% for question in questions %}
+                <div class="card mb-4 question-card" data-question-id="{{ question.id }}">
+                    <div class="card-header">
+                        <h5>Question {{ question.id }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="question-text">{{ question.question }}</p>
+                        <div class="options">
+                            {% for option in question.options %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" 
+                                       name="question_{{ question.id }}" 
+                                       id="q{{ question.id }}_option{{ loop.index0 }}"
+                                       value="{{ loop.index0 }}">
+                                <label class="form-check-label" for="q{{ question.id }}_option{{ loop.index0 }}">
+                                    {{ option }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-paper-plane"></i> Submit Quiz
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="results-container" style="display: none;">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+</div>
+{% endblock %}

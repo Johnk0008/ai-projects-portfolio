@@ -1,0 +1,1 @@
+# This file makes the ecommerce directory a Python package

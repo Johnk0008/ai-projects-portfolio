@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <!-- Key Metrics -->
+    <div class="col-12 mb-4">
+        <div class="row" id="key-metrics">
+            <!-- Metrics will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="col-lg-8 col-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-chart="income-statement">Income Statement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-chart="profitability">Profitability</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-chart="cash-flow">Cash Flow</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-chart="forecast">Forecast</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div id="main-chart" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4 col-12">
+        <!-- Balance Sheet Summary -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Balance Sheet</h5>
+            </div>
+            <div class="card-body">
+                <div id="balance-sheet-chart" style="height: 200px;"></div>
+                <div class="mt-3" id="liquidity-ratios">
+                    <!-- Liquidity ratios will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Expense Breakdown -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Expense Analysis</h5>
+            </div>
+            <div class="card-body">
+                <div id="expense-breakdown-chart" style="height: 250px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

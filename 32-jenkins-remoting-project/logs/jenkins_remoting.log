@@ -1,0 +1,194 @@
+2025-10-18 14:24:53,026 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:24:53,093 - src.jenkins_controller - ERROR - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10b586370>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-18 14:24:53,093 - src.jenkins_controller - INFO - Using requests-based Jenkins client
+2025-10-18 14:31:32,014 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:31:32,066 - src.jenkins_controller - ERROR - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11064f370>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-18 14:31:32,067 - src.jenkins_controller - INFO - Using requests-based Jenkins client
+2025-10-18 14:31:32,075 - src.jenkins_controller - ERROR - Error getting nodes: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /computer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11064ff70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-18 14:33:25,964 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:33:26,027 - src.jenkins_controller - ERROR - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1096ec370>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-18 14:33:26,028 - src.jenkins_controller - INFO - Using requests-based Jenkins client
+2025-10-18 14:33:26,049 - src.jenkins_controller - ERROR - Error getting nodes: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /computer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1096ecf70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-10-18 14:37:03,754 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:37:03,807 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x111854940>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:40:43,616 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:40:43,679 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102e536d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:40:56,319 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:40:56,359 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110f256d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:40:56,370 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:40:56,395 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110f43c40>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:40:56,396 - src.jenkins_controller - INFO - MOCK: Creating node linux-amd64-node
+2025-10-18 14:40:56,396 - src.jenkins_controller - INFO - Successfully created node: linux-amd64-node
+2025-10-18 14:40:56,396 - src.jenkins_controller - WARNING - Node linux-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:40:56,397 - src.jenkins_controller - INFO - Applying resource limits to linux-amd64-node
+2025-10-18 14:40:56,397 - src.jenkins_controller - INFO - Applying network restrictions to linux-amd64-node
+2025-10-18 14:40:56,397 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-amd64-node
+2025-10-18 14:40:56,397 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-amd64-node
+2025-10-18 14:40:56,398 - src.jenkins_controller - INFO - MOCK: Creating node linux-arm64-node
+2025-10-18 14:40:56,398 - src.jenkins_controller - INFO - Successfully created node: linux-arm64-node
+2025-10-18 14:40:56,398 - src.jenkins_controller - WARNING - Node linux-arm64-node has unauthorized architecture: arm64
+2025-10-18 14:40:56,398 - src.jenkins_controller - INFO - Applying resource limits to linux-arm64-node
+2025-10-18 14:40:56,398 - src.jenkins_controller - INFO - Applying network restrictions to linux-arm64-node
+2025-10-18 14:40:56,399 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-arm64-node
+2025-10-18 14:40:56,399 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-arm64-node
+2025-10-18 14:40:56,399 - src.jenkins_controller - INFO - MOCK: Creating node windows-amd64-node
+2025-10-18 14:40:56,399 - src.jenkins_controller - INFO - Successfully created node: windows-amd64-node
+2025-10-18 14:40:56,399 - src.jenkins_controller - WARNING - Node windows-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:40:56,400 - src.jenkins_controller - INFO - Applying resource limits to windows-amd64-node
+2025-10-18 14:40:56,400 - src.jenkins_controller - INFO - Applying network restrictions to windows-amd64-node
+2025-10-18 14:40:56,400 - src.jenkins_controller - INFO - Applying filesystem restrictions to windows-amd64-node
+2025-10-18 14:40:56,400 - src.jenkins_controller - INFO - Applied isolation rules to node: windows-amd64-node
+2025-10-18 14:41:11,948 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:41:12,023 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101c256d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:41:12,025 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:41:12,025 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:41:12,026 - src.jenkins_controller - INFO - Started Jenkins remoting monitoring
+2025-10-18 14:41:42,030 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:41:42,032 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:42:12,040 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:42:12,043 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:42:42,049 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:42:42,050 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:43:12,056 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:43:12,057 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:43:26,798 - src.jenkins_controller - INFO - Stopped Jenkins remoting monitoring
+2025-10-18 14:43:47,923 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:43:48,122 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1033306d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:43:48,133 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:43:48,140 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103330fd0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:43:48,141 - src.jenkins_controller - INFO - MOCK: Creating node linux-amd64-node
+2025-10-18 14:43:48,142 - src.jenkins_controller - INFO - Successfully created node: linux-amd64-node
+2025-10-18 14:43:48,142 - src.jenkins_controller - WARNING - Node linux-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:43:48,143 - src.jenkins_controller - INFO - Applying resource limits to linux-amd64-node
+2025-10-18 14:43:48,143 - src.jenkins_controller - INFO - Applying network restrictions to linux-amd64-node
+2025-10-18 14:43:48,144 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-amd64-node
+2025-10-18 14:43:48,144 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-amd64-node
+2025-10-18 14:43:48,145 - src.jenkins_controller - INFO - MOCK: Creating node linux-arm64-node
+2025-10-18 14:43:48,145 - src.jenkins_controller - INFO - Successfully created node: linux-arm64-node
+2025-10-18 14:43:48,145 - src.jenkins_controller - WARNING - Node linux-arm64-node has unauthorized architecture: arm64
+2025-10-18 14:43:48,146 - src.jenkins_controller - INFO - Applying resource limits to linux-arm64-node
+2025-10-18 14:43:48,147 - src.jenkins_controller - INFO - Applying network restrictions to linux-arm64-node
+2025-10-18 14:43:48,147 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-arm64-node
+2025-10-18 14:43:48,147 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-arm64-node
+2025-10-18 14:43:48,147 - src.jenkins_controller - INFO - MOCK: Creating node windows-amd64-node
+2025-10-18 14:43:48,147 - src.jenkins_controller - INFO - Successfully created node: windows-amd64-node
+2025-10-18 14:43:48,148 - src.jenkins_controller - WARNING - Node windows-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:43:48,148 - src.jenkins_controller - INFO - Applying resource limits to windows-amd64-node
+2025-10-18 14:43:48,149 - src.jenkins_controller - INFO - Applying network restrictions to windows-amd64-node
+2025-10-18 14:43:48,149 - src.jenkins_controller - INFO - Applying filesystem restrictions to windows-amd64-node
+2025-10-18 14:43:48,150 - src.jenkins_controller - INFO - Applied isolation rules to node: windows-amd64-node
+2025-10-18 14:44:05,303 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:44:05,584 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1044f76d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:44:05,667 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:44:05,686 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1044f7fd0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:44:05,692 - src.jenkins_controller - INFO - MOCK: Creating node linux-amd64-node
+2025-10-18 14:44:05,692 - src.jenkins_controller - INFO - Successfully created node: linux-amd64-node
+2025-10-18 14:44:05,693 - src.jenkins_controller - WARNING - Node linux-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:44:05,693 - src.jenkins_controller - INFO - Applying resource limits to linux-amd64-node
+2025-10-18 14:44:05,693 - src.jenkins_controller - INFO - Applying network restrictions to linux-amd64-node
+2025-10-18 14:44:05,693 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-amd64-node
+2025-10-18 14:44:05,694 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-amd64-node
+2025-10-18 14:44:05,694 - src.jenkins_controller - INFO - MOCK: Creating node linux-arm64-node
+2025-10-18 14:44:05,694 - src.jenkins_controller - INFO - Successfully created node: linux-arm64-node
+2025-10-18 14:44:05,695 - src.jenkins_controller - WARNING - Node linux-arm64-node has unauthorized architecture: arm64
+2025-10-18 14:44:05,695 - src.jenkins_controller - INFO - Applying resource limits to linux-arm64-node
+2025-10-18 14:44:05,695 - src.jenkins_controller - INFO - Applying network restrictions to linux-arm64-node
+2025-10-18 14:44:05,696 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-arm64-node
+2025-10-18 14:44:05,696 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-arm64-node
+2025-10-18 14:44:05,696 - src.jenkins_controller - INFO - MOCK: Creating node windows-amd64-node
+2025-10-18 14:44:05,700 - src.jenkins_controller - INFO - Successfully created node: windows-amd64-node
+2025-10-18 14:44:05,701 - src.jenkins_controller - WARNING - Node windows-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:44:05,701 - src.jenkins_controller - INFO - Applying resource limits to windows-amd64-node
+2025-10-18 14:44:05,701 - src.jenkins_controller - INFO - Applying network restrictions to windows-amd64-node
+2025-10-18 14:44:05,702 - src.jenkins_controller - INFO - Applying filesystem restrictions to windows-amd64-node
+2025-10-18 14:44:05,702 - src.jenkins_controller - INFO - Applied isolation rules to node: windows-amd64-node
+2025-10-18 14:44:29,817 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:44:30,030 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1097586d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:44:30,032 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:44:30,032 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:44:30,033 - src.jenkins_controller - INFO - Started Jenkins remoting monitoring
+2025-10-18 14:45:00,034 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:45:00,034 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:45:30,036 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:45:30,037 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:46:00,039 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:46:00,040 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:46:12,651 - src.jenkins_controller - INFO - Stopped Jenkins remoting monitoring
+2025-10-18 14:50:38,991 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:50:39,087 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106d376d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:50:39,107 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:50:39,119 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106d37fd0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:50:39,120 - src.jenkins_controller - INFO - MOCK: Creating node linux-amd64-node
+2025-10-18 14:50:39,120 - src.jenkins_controller - INFO - Successfully created node: linux-amd64-node
+2025-10-18 14:50:39,120 - src.jenkins_controller - WARNING - Node linux-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:50:39,121 - src.jenkins_controller - INFO - Applying resource limits to linux-amd64-node
+2025-10-18 14:50:39,121 - src.jenkins_controller - INFO - Applying network restrictions to linux-amd64-node
+2025-10-18 14:50:39,122 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-amd64-node
+2025-10-18 14:50:39,122 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-amd64-node
+2025-10-18 14:50:39,122 - src.jenkins_controller - INFO - MOCK: Creating node linux-arm64-node
+2025-10-18 14:50:39,122 - src.jenkins_controller - INFO - Successfully created node: linux-arm64-node
+2025-10-18 14:50:39,123 - src.jenkins_controller - WARNING - Node linux-arm64-node has unauthorized architecture: arm64
+2025-10-18 14:50:39,123 - src.jenkins_controller - INFO - Applying resource limits to linux-arm64-node
+2025-10-18 14:50:39,123 - src.jenkins_controller - INFO - Applying network restrictions to linux-arm64-node
+2025-10-18 14:50:39,125 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-arm64-node
+2025-10-18 14:50:39,125 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-arm64-node
+2025-10-18 14:50:39,129 - src.jenkins_controller - INFO - MOCK: Creating node windows-amd64-node
+2025-10-18 14:50:39,130 - src.jenkins_controller - INFO - Successfully created node: windows-amd64-node
+2025-10-18 14:50:39,130 - src.jenkins_controller - WARNING - Node windows-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:50:39,130 - src.jenkins_controller - INFO - Applying resource limits to windows-amd64-node
+2025-10-18 14:50:39,131 - src.jenkins_controller - INFO - Applying network restrictions to windows-amd64-node
+2025-10-18 14:50:39,132 - src.jenkins_controller - INFO - Applying filesystem restrictions to windows-amd64-node
+2025-10-18 14:50:39,132 - src.jenkins_controller - INFO - Applied isolation rules to node: windows-amd64-node
+2025-10-18 14:50:50,761 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:50:50,847 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062916d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:51:04,254 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:51:04,331 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1082356d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:51:04,332 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:51:04,332 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:51:04,333 - src.jenkins_controller - INFO - Started Jenkins remoting monitoring
+2025-10-18 14:51:34,338 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:51:34,338 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:52:04,341 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:52:04,342 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:52:34,348 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:52:34,348 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:53:04,351 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:53:04,352 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:53:34,358 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:53:34,359 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:54:04,363 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:54:04,367 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:54:34,374 - src.jenkins_controller - INFO - Stopped Jenkins remoting monitoring
+2025-10-18 14:57:05,144 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:57:05,211 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bb366d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:57:05,226 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:57:05,329 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bb36fd0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:57:05,334 - src.jenkins_controller - INFO - MOCK: Creating node linux-amd64-node
+2025-10-18 14:57:05,335 - src.jenkins_controller - INFO - Successfully created node: linux-amd64-node
+2025-10-18 14:57:05,337 - src.jenkins_controller - WARNING - Node linux-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:57:05,338 - src.jenkins_controller - INFO - Applying resource limits to linux-amd64-node
+2025-10-18 14:57:05,339 - src.jenkins_controller - INFO - Applying network restrictions to linux-amd64-node
+2025-10-18 14:57:05,339 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-amd64-node
+2025-10-18 14:57:05,340 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-amd64-node
+2025-10-18 14:57:05,340 - src.jenkins_controller - INFO - MOCK: Creating node linux-arm64-node
+2025-10-18 14:57:05,341 - src.jenkins_controller - INFO - Successfully created node: linux-arm64-node
+2025-10-18 14:57:05,370 - src.jenkins_controller - WARNING - Node linux-arm64-node has unauthorized architecture: arm64
+2025-10-18 14:57:05,657 - src.jenkins_controller - INFO - Applying resource limits to linux-arm64-node
+2025-10-18 14:57:05,657 - src.jenkins_controller - INFO - Applying network restrictions to linux-arm64-node
+2025-10-18 14:57:05,657 - src.jenkins_controller - INFO - Applying filesystem restrictions to linux-arm64-node
+2025-10-18 14:57:05,658 - src.jenkins_controller - INFO - Applied isolation rules to node: linux-arm64-node
+2025-10-18 14:57:05,658 - src.jenkins_controller - INFO - MOCK: Creating node windows-amd64-node
+2025-10-18 14:57:05,671 - src.jenkins_controller - INFO - Successfully created node: windows-amd64-node
+2025-10-18 14:57:05,672 - src.jenkins_controller - WARNING - Node windows-amd64-node has unauthorized architecture: amd64
+2025-10-18 14:57:05,672 - src.jenkins_controller - INFO - Applying resource limits to windows-amd64-node
+2025-10-18 14:57:05,673 - src.jenkins_controller - INFO - Applying network restrictions to windows-amd64-node
+2025-10-18 14:57:05,673 - src.jenkins_controller - INFO - Applying filesystem restrictions to windows-amd64-node
+2025-10-18 14:57:05,673 - src.jenkins_controller - INFO - Applied isolation rules to node: windows-amd64-node
+2025-10-18 14:57:39,976 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:57:40,133 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x109be56d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:58:04,946 - src.jenkins_controller - INFO - Loaded configuration from YAML file
+2025-10-18 14:58:05,056 - src.jenkins_controller - WARNING - Failed to connect to Jenkins: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /crumbIssuer/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1057c56d0>: Failed to establish a new connection: [Errno 61] Connection refused')), using mock client
+2025-10-18 14:58:05,059 - src.jenkins_controller - WARNING - Node windows-amd64-node is offline
+2025-10-18 14:58:05,059 - src.jenkins_controller - INFO - Monitoring: 2/3 nodes online, Total executors: 8
+2025-10-18 14:58:05,060 - src.jenkins_controller - INFO - Started Jenkins remoting monitoring
+2025-10-18 14:58:33,413 - src.jenkins_controller - INFO - Stopped Jenkins remoting monitoring

@@ -1,0 +1,43 @@
+MANUFACTURING INSTRUCTIONS
+==================================================
+
+COMPONENTS SUMMARY:
+--------------------
+
+SPUR GEAR: Spur_Gear_24T_2.5M
+  Teeth: 24
+  Module: 2.5 mm
+  Pitch Diameter: 60.00 mm
+  Outer Diameter: 65.00 mm
+  Thickness: 15 mm
+  Bore: 12 mm
+  Material: Steel AISI 4140
+
+  MANUFACTURING STEPS:
+  1. Rough turn gear blank
+  2. Gear tooth cutting (hobbing/shaping)
+  3. Heat treatment
+  4. Finish grinding
+  5. Quality inspection
+
+BEARING HOUSING: Bearing_Housing_ID35_OD65
+  Inner Diameter: 35 mm
+  Outer Diameter: 65 mm
+  Width: 30 mm
+  Bolt Holes: 6 mm
+  Material: Cast Iron
+
+  MANUFACTURING STEPS:
+  1. Cast or machine housing blank
+  2. Bore inner diameter to H7 tolerance
+  3. Drill and tap bolt holes
+  4. Surface finishing
+  5. Assembly preparation
+
+==================================================
+QUALITY CONTROL CHECKLIST:
+- Dimensional accuracy verification
+- Material certification review
+- Surface finish measurement
+- Hardness testing (if applicable)
+- Final inspection and approval

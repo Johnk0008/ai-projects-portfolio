@@ -1,0 +1,12 @@
+category,turnover_rate,type
+Engineering,16.022099447513813,department
+Finance,11.046511627906977,department
+HR,19.54022988505747,department
+Marketing,14.935064935064934,department
+Operations,14.193548387096774,department
+Sales,14.02439024390244,department
+Director,15.763546798029557,position
+Junior,14.285714285714285,position
+Manager,14.583333333333334,position
+Mid-Level,17.326732673267326,position
+Senior,13.0,position

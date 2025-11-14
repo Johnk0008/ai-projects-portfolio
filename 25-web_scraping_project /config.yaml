@@ -1,0 +1,28 @@
+scraping:
+  timeout: 30
+  retry_attempts: 3
+  delay_between_requests: 1
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+websites:
+  example_books:
+    url: "http://books.toscrape.com"
+    selectors:
+      product_container: "article.product_pod"
+      title: "h3 a"
+      price: "p.price_color"
+      rating: "p.star-rating"
+      availability: "p.availability"
+  
+  example_quotes:
+    url: "http://quotes.toscrape.com"
+    selectors:
+      quote_container: "div.quote"
+      text: "span.text"
+      author: "small.author"
+      tags: "div.tags a.tag"
+
+data_processing:
+  output_format: "csv"
+  encoding: "utf-8"
+  save_raw_html: false

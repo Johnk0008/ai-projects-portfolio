@@ -1,0 +1,51 @@
+MANUFACTURING INSTRUCTIONS
+==================================================
+
+SPUR GEAR MANUFACTURING:
+Material: Steel AISI 4140
+Number of teeth: 24
+Module: 2.5 mm
+Pitch diameter: 60.0 mm
+Outer diameter: 65.0 mm
+Bore diameter: 12 mm
+Thickness: 15 mm
+
+Manufacturing Steps:
+1. Cut gear blank from Steel AISI 4140 stock
+2. Rough turn to outer diameter
+3. Bore center hole to size
+4. Cut teeth using gear hobbing machine
+5. Heat treatment: Carburize and harden to 55-60 HRC
+6. Grind bore to final size
+7. Deburr and inspect
+
+Quality Requirements:
+- AGMA Quality Class 8 or better
+- Tooth profile tolerance: ±0.02 mm
+- Runout: < 0.05 mm
+- Surface finish: 0.8 μm Ra on teeth
+
+BEARING HOUSING MANUFACTURING:
+Material: Cast Iron
+Outer diameter: 65 mm
+Bore diameter: 35 mm
+Width: 30 mm
+
+Manufacturing Steps:
+1. Cast housing to near-net shape
+2. Rough machine all surfaces
+3. Finish bore to H7 tolerance
+4. Machine mounting surfaces
+5. Drill and tap bolt holes
+6. Deburr and clean
+
+Quality Requirements:
+- Bore tolerance: H7
+- Surface finish: 1.6 μm Ra in bore
+- Concentricity: 0.03 mm
+
+GENERAL NOTES:
+- All dimensions in millimeters
+- Apply anti-corrosion coating after machining
+- Use appropriate cutting fluids during machining
+- Follow all safety procedures

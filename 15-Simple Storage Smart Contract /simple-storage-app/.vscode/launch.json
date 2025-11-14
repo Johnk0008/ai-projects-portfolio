@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Deploy Contract",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/deploy.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Interact with Contract",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/interact.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

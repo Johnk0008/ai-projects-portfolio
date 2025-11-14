@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "disease_prediction_env/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black"
+}

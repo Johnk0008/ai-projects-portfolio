@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesign Results - AI Logo Redesign</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+        }
+
+        .card-header {
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: 600;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 2px solid #ddd;
+            cursor: pointer;
+        }
+
+        .design-logic {
+            white-space: pre-line;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .img-fluid {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .btn {
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-4">Logo Redesign Concepts</h1>
+                
+                <!-- Original Logo Analysis -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h3>Original Logo Analysis</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <img src="{{ url_for('static', filename='uploads/' + original_logo) }}" 
+                                     class="img-fluid" alt="Original Logo">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Design Analysis:</h5>
+                                <ul>
+                                    <li><strong>Complexity Score:</strong> {{ analysis.complexity_score }}/1.0</li>
+                                    <li><strong>Modernity Score:</strong> {{ (analysis.modernity_score * 100)|int }}%</li>
+                                    <li><strong>Color Count:</strong> {{ analysis.color_analysis.color_count }}</li>
+                                    <li><strong>Shape Type:</strong> {{ analysis.shape_analysis.shape_type }}</li>
+                                    <li><strong>Symmetry:</strong> {{ analysis.shape_analysis.symmetry }}</li>
+                                </ul>
+                                
+                                <h5>Recommendations:</h5>
+                                <ul>
+                                    {% for rec in analysis.recommendations %}
+                                    <li>{{ rec }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redesign Concepts -->
+                <h2 class="mb-4">AI-Generated Redesign Concepts</h2>
+                <div class="row">
+                    {% for redesign in redesigns %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">{{ redesign.concept }}</h5>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="text-center mb-3">
+                                    <img src="{{ redesign.image_data }}" class="img-fluid" alt="{{ redesign.concept }}">
+                                </div>
+                                
+                                <h6>Design Logic:</h6>
+                                <div class="design-logic flex-grow-1">
+                                    {{ redesign.design_logic }}
+                                </div>
+                                
+                                <h6 class="mt-3">Colors Used:</h6>
+                                <div class="color-palette mb-2">
+                                    {% for color in redesign.colors_used %}
+                                    <span class="color-swatch" style="background-color: {{ color }};" title="{{ color }}"></span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <a href="/" class="btn btn-primary">Generate New Concepts</a>
+                        <button class="btn btn-success" onclick="window.print()">Print Concepts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

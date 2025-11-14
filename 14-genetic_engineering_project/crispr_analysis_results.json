@@ -1,0 +1,42 @@
+{
+  "BRCA1": {
+    "length": 60,
+    "pam_sites": 0,
+    "gc_content": 50.0,
+    "pam_locations": [],
+    "editing_efficiency": "High efficiency - Optimal GC content",
+    "sequence_preview": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGAT..."
+  },
+  "TP53": {
+    "length": 60,
+    "pam_sites": 0,
+    "gc_content": 50.0,
+    "pam_locations": [],
+    "editing_efficiency": "High efficiency - Optimal GC content",
+    "sequence_preview": "GCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGC..."
+  },
+  "CFTR": {
+    "length": 60,
+    "pam_sites": 0,
+    "gc_content": 50.0,
+    "pam_locations": [],
+    "editing_efficiency": "High efficiency - Optimal GC content",
+    "sequence_preview": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGAT..."
+  },
+  "APOE": {
+    "length": 60,
+    "pam_sites": 0,
+    "gc_content": 50.0,
+    "pam_locations": [],
+    "editing_efficiency": "High efficiency - Optimal GC content",
+    "sequence_preview": "GCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGC..."
+  },
+  "HBB": {
+    "length": 60,
+    "pam_sites": 0,
+    "gc_content": 50.0,
+    "pam_locations": [],
+    "editing_efficiency": "High efficiency - Optimal GC content",
+    "sequence_preview": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGAT..."
+  }
+}

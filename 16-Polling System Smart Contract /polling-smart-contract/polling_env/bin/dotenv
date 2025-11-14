@@ -1,0 +1,9 @@
+#!/bin/sh
+'''exec' "/Users/arjan/Documents/Git_CodeAlpha/Blockchain Development Tasks/Polling System Smart Contract /polling-smart-contract/polling_env/bin/python3" "$0" "$@"
+' '''
+import sys
+from dotenv.__main__ import cli
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(cli())

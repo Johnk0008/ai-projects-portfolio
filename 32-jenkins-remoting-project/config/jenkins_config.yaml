@@ -1,0 +1,27 @@
+jenkins:
+  base_url: "http://localhost:8080"
+  username: "admin"
+  api_token: "${JENKINS_API_TOKEN}"
+  
+remoting:
+  agent_port: 50000
+  web_socket: true
+  tunnel: ""
+  
+security:
+  ssl_verification: true
+  node_isolation: true
+  allowed_architectures:
+    - "linux-amd64"
+    - "linux-arm64"
+    - "windows-amd64"
+    - "darwin-amd64"
+  
+nodes:
+  default_labels:
+    - "docker"
+    - "python-3.9"
+  
+logging:
+  level: "INFO"
+  file: "logs/jenkins_remoting.log"

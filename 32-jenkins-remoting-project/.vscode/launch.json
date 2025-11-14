@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Jenkins Remoting",
+            "type": "python",
+            "request": "launch",
+            "program": "app.py",
+            "console": "integratedTerminal",
+            "args": ["--monitor"],
+            "env": {
+                "JENKINS_API_TOKEN": "${env:JENKINS_API_TOKEN}"
+            }
+        }
+    ]
+}

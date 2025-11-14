@@ -1,0 +1,89 @@
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    exclude:
+    - README.md
+
+pr:
+  branches:
+    include:
+    - main
+
+variables:
+  imageRepository: 'ml-cicd-app'
+  containerRegistry: 'your-acr-name.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+  
+  # Agent VM image
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build and Test
+  jobs:
+  - job: Build
+    displayName: Build and Test
+    pool:
+      vmImage: $(vmImageName)
+    
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.9'
+      displayName: 'Use Python 3.9'
+    
+    - script: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      displayName: 'Install dependencies'
+    
+    - script: |
+        python -m pytest tests/ -v --junitxml=junit/test-results.xml
+      displayName: 'Run tests'
+    
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: '**/test-results.xml'
+        testRunTitle: 'Pytest results'
+    
+    - task: Docker@2
+      displayName: 'Build and Push Docker image'
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(containerRegistry)
+        tags: |
+          $(tag)
+          latest
+
+- stage: Deploy
+  displayName: Deploy to Azure App Service
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy to App Service
+    environment: 'production'
+    pool:
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: Docker@2
+            displayName: 'Log in to ACR'
+            inputs:
+              command: login
+              containerRegistry: $(containerRegistry)
+          
+          - task: AzureWebAppContainer@1
+            displayName: 'Deploy to Azure App Service'
+            inputs:
+              azureSubscription: 'Your-Azure-Service-Connection'
+              appName: 'your-ml-app-service'
+              containers: '$(containerRegistry)/$(imageRepository):$(tag)'

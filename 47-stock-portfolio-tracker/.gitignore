@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+stock_env/
+portfolio_data.csv
+portfolio_summary.txt
+.DS_Store

@@ -1,0 +1,60 @@
+{
+  "project": "Mechanical Components CAD Design",
+  "author": "CAD Generator v1.0",
+  "date": "2024",
+  "units": "millimeters (mm)",
+  "components": [
+    {
+      "type": "spur_gear",
+      "name": "Spur_Gear_24T_2.5M",
+      "teeth": 24,
+      "module": 2.5,
+      "thickness": 15,
+      "bore_diameter": 12,
+      "material": "Steel AISI 4140",
+      "pitch_diameter": 60.0,
+      "outer_diameter": 65.0,
+      "root_diameter": 53.75,
+      "circular_pitch": 7.853981633974483
+    },
+    {
+      "type": "bearing_housing",
+      "name": "Bearing_Housing_ID35_OD65",
+      "inner_diameter": 35,
+      "outer_diameter": 65,
+      "width": 30,
+      "bolt_hole_diameter": 6,
+      "material": "Cast Iron"
+    }
+  ],
+  "material_specifications": {
+    "Steel AISI 4140": {
+      "density": "7.85 g/cm\u00b3",
+      "tensile_strength": "655 MPa",
+      "yield_strength": "415 MPa",
+      "hardness": "28-32 HRC",
+      "applications": "Gears, shafts, high-strength components"
+    },
+    "Cast Iron": {
+      "density": "7.2 g/cm\u00b3",
+      "tensile_strength": "250 MPa",
+      "compressive_strength": "1000 MPa",
+      "hardness": "180-250 HB",
+      "applications": "Housings, frames, structural components"
+    }
+  },
+  "manufacturing_guidelines": {
+    "gear_manufacturing": [
+      "Use gear hobbing or shaping process",
+      "Heat treatment: Carburizing and hardening",
+      "Surface finish: 0.8-1.6 \u03bcm Ra",
+      "AGMA quality standard: Class 8 or better"
+    ],
+    "housing_manufacturing": [
+      "CNC machining for precision",
+      "Bore tolerance: H7",
+      "Surface finish: 1.6-3.2 \u03bcm Ra",
+      "Stress relief annealing recommended"
+    ]
+  }
+}

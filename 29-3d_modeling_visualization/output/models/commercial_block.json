@@ -1,0 +1,96 @@
+{
+  "name": "Commercial Building",
+  "type": "commercial",
+  "vertices": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      12,
+      0,
+      0
+    ],
+    [
+      12,
+      12,
+      0
+    ],
+    [
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      0,
+      20
+    ],
+    [
+      12,
+      0,
+      20
+    ],
+    [
+      12,
+      12,
+      20
+    ],
+    [
+      0,
+      12,
+      20
+    ]
+  ],
+  "faces": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      0,
+      1,
+      5,
+      4
+    ],
+    [
+      1,
+      2,
+      6,
+      5
+    ],
+    [
+      2,
+      3,
+      7,
+      6
+    ],
+    [
+      3,
+      0,
+      4,
+      7
+    ]
+  ],
+  "materials": {
+    "facade": "concrete",
+    "windows": "glass",
+    "entrance": "metal"
+  },
+  "metadata": {
+    "width": 12,
+    "depth": 12,
+    "height": 20,
+    "floors": 5,
+    "created_with": "Python 3D Modeler"
+  }
+}

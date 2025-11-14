@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML CI/CD Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ML Model CI/CD Demo</h1>
+        <p>This app demonstrates a CI/CD pipeline with Azure</p>
+        
+        <div class="demo-section">
+            <h2>Model Prediction</h2>
+            <p>Enter 4 feature values (separated by commas):</p>
+            <input type="text" id="features" placeholder="e.g., 1.2, -0.5, 0.3, 0.8">
+            <button onclick="makePrediction()">Predict</button>
+            <div id="result"></div>
+        </div>
+        
+        <div class="info">
+            <h3>Pipeline Information</h3>
+            <ul>
+                <li>✅ Azure Pipelines for CI/CD</li>
+                <li>✅ Azure Container Registry</li>
+                <li>✅ Azure App Service</li>
+                <li>✅ Automated Testing</li>
+                <li>✅ Container Deployment</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        async function makePrediction() {
+            const featuresInput = document.getElementById('features').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const features = featuresInput.split(',').map(Number);
+                if (features.length !== 4 || features.some(isNaN)) {
+                    throw new Error('Please enter exactly 4 valid numbers');
+                }
+                
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ features: features })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            Prediction: <strong>${data.prediction[0]}</strong>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="error">
+                            Error: ${data.error}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        Error: ${error.message}
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+    "intents": {
+        "greeting": {
+            "patterns": [
+                "hello", "hi", "hey", "good morning", "good afternoon", "good evening",
+                "howdy", "what's up", "hello there", "hi there", "hey there",
+                "greetings", "hi bot", "hello bot", "hey bot", "yo", "sup",
+                "good day", "morning", "afternoon", "evening"
+            ],
+            "responses": [
+                "Hello! How can I assist you today?",
+                "Hi there! What can I help you with?",
+                "Hey! How can I be of service?",
+                "Greetings! How may I help you?",
+                "Hello! Nice to meet you. How can I assist?"
+            ]
+        },
+        "goodbye": {
+            "patterns": [
+                "bye", "goodbye", "see you", "farewell", "take care",
+                "have a good day", "cya", "see you later", "see ya",
+                "I'm leaving", "gotta go", "bye bye", "good night",
+                "talk to you later", "catch you later"
+            ],
+            "responses": [
+                "Goodbye! Have a great day!",
+                "See you later! Feel free to ask if you have more questions.",
+                "Take care! Come back anytime.",
+                "Farewell! It was nice talking to you.",
+                "Goodbye! Don't hesitate to return if you need help."
+            ]
+        },
+        "thanks": {
+            "patterns": [
+                "thank you", "thanks", "thank you very much", "appreciate it",
+                "thanks a lot", "thx", "thank you so much", "much appreciated",
+                "thanks a bunch", "ty", "thank you kindly"
+            ],
+            "responses": [
+                "You're welcome!",
+                "Happy to help!",
+                "Anytime! Let me know if you need anything else.",
+                "You're very welcome!",
+                "My pleasure! Is there anything else I can help with?"
+            ]
+        },
+        "hours": {
+            "patterns": [
+                "what are your hours", "when are you open", "business hours",
+                "opening times", "when do you close", "working hours",
+                "what time do you open", "what time do you close",
+                "are you open now", "when are you available",
+                "operating hours", "hours of operation"
+            ],
+            "responses": [
+                "We're open Monday to Friday from 9 AM to 6 PM.",
+                "Our business hours are 9 AM to 6 PM, Monday through Friday.",
+                "You can reach us from 9 AM to 6 PM on weekdays.",
+                "We're available Monday to Friday, 9 AM - 6 PM.",
+                "Our operating hours are 9:00 AM to 6:00 PM, Monday through Friday."
+            ]
+        },
+        "help": {
+            "patterns": [
+                "help", "can you help", "what can you do", "how does this work",
+                "assist me", "support", "I need help", "can you assist",
+                "what help can you provide", "how can you help me",
+                "what do you do", "your capabilities"
+            ],
+            "responses": [
+                "I can help answer frequently asked questions, provide information, or just chat!",
+                "I'm here to assist with questions about our services, hours, or general inquiries.",
+                "Feel free to ask me anything! I can help with common questions or just have a conversation.",
+                "I can answer questions, provide information, and assist with various topics. What do you need help with?",
+                "I'm your AI assistant! I can help with information, answer questions, or just chat with you."
+            ]
+        }
+    },
+    "confidence_threshold": 0.3,
+    "rules_file": "data/faq_dataset.json"
+}

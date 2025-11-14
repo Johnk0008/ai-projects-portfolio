@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI Bot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .chat-container {
+            flex: 1;
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            width: 95%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #e9ecef;
+        }
+        
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+        
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message-bubble {
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .user .message-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot .message-bubble {
+            background: #f1f3f4;
+            color: #333;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message-info {
+            font-size: 0.7em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        .input-area {
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .input-area input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-area input:focus {
+            border-color: #667eea;
+        }
+        
+        .input-area button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.3s ease;
+        }
+        
+        .input-area button:hover {
+            transform: scale(1.05);
+        }
+        
+        .info-panel {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        
+        .info-panel h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 10px 20px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI Chatbot</h1>
+        <p>Powered by NLP and Machine Learning</p>
+    </div>
+    
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="info-panel">
+                <h3>About this Bot</h3>
+                <p>This chatbot uses:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Natural Language Processing</li>
+                    <li>Machine Learning</li>
+                    <li>Rule-based responses</li>
+                </ul>
+            </div>
+            
+            <div class="info-panel">
+                <h3>Try asking:</h3>
+                <p>• "Hello" or "Hi"</p>
+                <p>• "What are your hours?"</p>
+                <p>• "Thank you"</p>
+                <p>• "What can you do?"</p>
+                <p>• "Goodbye"</p>
+            </div>
+        </div>
+        
+        <div class="chat-area">
+            <div class="messages" id="messages">
+                <div class="message bot">
+                    <div class="message-bubble">
+                        Hello! I'm your AI assistant. How can I help you today?
+                        <div class="message-info">Bot • Just now</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="typing-indicator" id="typing">
+                Bot is typing...
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Type your message here..." autocomplete="off">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+        const messagesDiv = document.getElementById('messages');
+        const messageInput = document.getElementById('messageInput');
+        const typingIndicator = document.getElementById('typing');
+        
+        // Connect to WebSocket
+        socket.on('connect', function() {
+            console.log('Connected to server');
+        });
+        
+        // Handle incoming messages
+        socket.on('receive_message', function(data) {
+            typingIndicator.style.display = 'none';
+            addMessage(data.user_message, 'user');
+            addMessage(data.bot_response, 'bot', data);
+        });
+        
+        // Handle errors
+        socket.on('error', function(data) {
+            typingIndicator.style.display = 'none';
+            addMessage('Error: ' + data.error, 'bot');
+        });
+        
+        // Send message function
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
+                
+                // Send message via WebSocket
+                socket.emit('send_message', {
+                    message: message,
+                    timestamp: new Date().toISOString()
+                });
+                
+                // Clear input
+                messageInput.value = '';
+                
+                // Scroll to bottom
+                scrollToBottom();
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(text, sender, data = null) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.textContent = text;
+            
+            if (data && sender === 'bot') {
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'message-info';
+                infoDiv.textContent = `Bot • ${data.method} • Confidence: ${(data.confidence * 100).toFixed(1)}%`;
+                bubbleDiv.appendChild(infoDiv);
+            } else if (sender === 'user') {
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'message-info';
+                infoDiv.textContent = 'You • Just now';
+                bubbleDiv.appendChild(infoDiv);
+            }
+            
+            messageDiv.appendChild(bubbleDiv);
+            messagesDiv.appendChild(messageDiv);
+            
+            scrollToBottom();
+        }
+        
+        // Scroll to bottom of messages
+        function scrollToBottom() {
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        // Send message on Enter key
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Focus input on load
+        messageInput.focus();
+    </script>
+</body>
+</html>
