@@ -218,7 +218,9 @@ Predictive churn analytics model.
 
 AI model for early detection of medical conditions.
 
-### [53. Uber Datasets Analysis](/53-Uber_DataSets/) (14–53)**
+### [53. Uber Datasets Analysis](/53-Uber_DataSets/) 
+
+Exploration and visualization of Uber ride datasets.
 
 
 ---
